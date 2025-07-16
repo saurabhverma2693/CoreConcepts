@@ -1,7 +1,5 @@
 import reactImg from './assets/react-core-concepts.png'
-import componentImg from './assets/components.png'
-import jsxImg from './assets/jsx-ui.png'
-import stateImg from './assets/state-mgmt.png'
+import { CORE_CONCEPTS } from './data';
 
 const reactDescription = ['Fundamental','Crucial','Core'];
 
@@ -22,15 +20,30 @@ function Header(){
   );
 }
 
-function CoreConcepts(props){
+
+// option of props:
+// // function CoreConcepts(props){
+// function CoreConcepts({title,image,description}){
+//   return(
+//     <li> 
+//       <img src={props.image} alt={props.title} />
+//       <h3> {props.title} </h3>
+//       <p> {props.description}</p>
+//     </li>
+//   );
+// }
+
+//This is called object destructuring
+function CoreConcepts({title,image,description}){
   return(
     <li> 
-      <img src={props.image} alt={props.title} />
-      <h3> {props.title} </h3>
-      <p> {props.description}</p>
+      <img src={image} alt={title} />
+      <h3> {title} </h3>
+      <p> {description}</p>
     </li>
   );
 }
+
 
 function App() {
   return (
@@ -41,25 +54,30 @@ function App() {
           <h2>Core Concepts</h2>
           <ul>
             <CoreConcepts 
-            title="Components"
-            description=" The core U.I building blocks"
-            image= {componentImg}
+            title= {CORE_CONCEPTS[0].title}
+            description={CORE_CONCEPTS[0].description}
+            image= {CORE_CONCEPTS[0].image}
              />
-            <CoreConcepts
-            title="Jsx"
-            description=" "
-            image= {jsxImg}
+
+<CoreConcepts {...CORE_CONCEPTS[1]} />
+<CoreConcepts {...CORE_CONCEPTS[2]} />
+<CoreConcepts {...CORE_CONCEPTS[3]} />
+
+            {/* <CoreConcepts
+            title= {CORE_CONCEPTS[1].title}
+            description={CORE_CONCEPTS[1].description}
+            image= {CORE_CONCEPTS[1].image}
             />
             <CoreConcepts
-            title="State"
-            description=" "
-            image= {stateImg}
+            title= {CORE_CONCEPTS[2].title}
+            description={CORE_CONCEPTS[2].description}
+            image= {CORE_CONCEPTS[2].image}
             />
             <CoreConcepts
-            title="Props"
-            description=""
-            image= {stateImg}
-            />
+            title= {CORE_CONCEPTS[3].title}
+            description={CORE_CONCEPTS[3].description}
+            image= {CORE_CONCEPTS[3].image}
+            /> */}
           </ul>
 
         </section>
