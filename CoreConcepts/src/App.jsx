@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Fragment, useState} from "react";
+// import { useState, Fragment} from "react";
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header.jsx";
 import CoreConcepts from "./components/CoreConcepts.jsx";
@@ -29,7 +30,9 @@ function App() {
   }
 
   return (
-    <div>
+    
+    // <Fragment>
+    <>          
       <Header />
       <main>
         <section id="core-concepts">
@@ -100,7 +103,8 @@ function App() {
            {tabContent}
         </section>
       </main>
-    </div>
+      </>  // This is empty elements which is an alternative of fragment element
+    // </Fragment>
   );
 }
 
