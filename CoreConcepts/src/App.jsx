@@ -10,7 +10,7 @@ function App() {
     <>          
       <Header />
       <main>
-        <CoreConcept />
+        {/* <CoreConcept /> */}
         <Examples />
       </main>
       </>  // This is empty elements which is an alternative of fragment element
